@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SplitText from "../components/SplitText.jsx"
+import PixelCard from '../components/PixelCard.jsx'
 
 export default function Home() {
   return (
@@ -35,8 +36,20 @@ export default function Home() {
         </section>
       </main>
       <aside className="bg-gray-950 text-white">
-        <h2>PROBA</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere sint hic error perferendis adipisci, architecto eveniet ad molestias recusandae ea, velit illum quia, earum magnam cumque minima animi quis inventore. Facilis, eum reiciendis sed minus adipisci rem aliquid voluptatibus quibusdam ipsam repellat blanditiis obcaecati sit recusandae. Sit inventore quos odit possimus, ab iusto voluptatibus ipsum voluptatum odio veritatis voluptatem animi, nihil reiciendis laudantium vitae corporis quo, asperiores architecto. Enim, voluptates nam. Itaque debitis repellat recusandae nostrum quia maxime nam saepe maiores, reiciendis rerum ratione aliquam autem dolorem, eveniet similique dignissimos qui totam porro, error et? Officia voluptatem ut provident commodi!</p>
+        <h2 className="text-center font-bebas">ABOUT US</h2>
+        <section className="mx-auto grid max-w-6xl grid-cols-1 place-items-center gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1">
+            <div className="absolute top-0 left-0 bottom-0 right-0">
+              <h3 className="text-center">proba</h3>
+              <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nobis error quidem rerum velit perspiciatis repudiandae a rem maiores quae dolor dolore, blanditiis ea quasi soluta earum sint magnam sed.</p>
+            </div>
+          </PixelCard>
+          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1"><div></div></PixelCard>
+          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1"><div></div></PixelCard>
+          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1"><div></div></PixelCard>
+          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1"><div></div></PixelCard>
+          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1"><div></div></PixelCard>
+        </section>
       </aside>
       <footer>
       </footer>
