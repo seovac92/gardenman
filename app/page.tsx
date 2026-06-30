@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SplitText from "../components/SplitText.jsx"
 import PixelCard from '../components/PixelCard.jsx'
+import services from "@/data/services.js";
 
 export default function Home() {
   return (
@@ -36,22 +37,54 @@ export default function Home() {
         </section>
       </main>
       <aside className="bg-gray-950 text-white">
-        <h2 className="text-center font-bebas">ABOUT US</h2>
-        <section className="mx-auto grid max-w-6xl grid-cols-1 place-items-center gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1">
-            <div className="absolute top-0 left-0 bottom-0 right-0">
-              <h3 className="text-center">proba</h3>
-              <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nobis error quidem rerum velit perspiciatis repudiandae a rem maiores quae dolor dolore, blanditiis ea quasi soluta earum sint magnam sed.</p>
-            </div>
-          </PixelCard>
-          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1"><div></div></PixelCard>
-          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1"><div></div></PixelCard>
-          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1"><div></div></PixelCard>
-          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1"><div></div></PixelCard>
-          <PixelCard gap={5} speed={100} colors="#f8fafc,#f1f5f9,#cbd5e1"><div></div></PixelCard>
+        <section className="py-10">
+          <h2 className="mb-10 text-5xl text-center font-bebas md:text-8xl">SERVICES</h2>
+          <section className="mx-auto grid max-w-6xl grid-cols-1 place-items-center gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {
+              services.map((service) => (
+                <PixelCard key={service.id} variant="blue" gap={5} speed={100} colors="#99A0FF">
+                  <div className="absolute top-0 left-0 bottom-0 right-0">
+                    <img src={service.image} alt={service.image} />
+                    <h3 className="font-bebas text-4xl text-green-700 tracking-wide">{service.title}</h3>
+                    <div className="mx-auto my-3 h-[3px] w-10 rounded-full bg-green-700" />
+                    <p className="text-black text-lg leading-snug">{service.text}</p>
+                  </div>
+                </PixelCard>
+              ))
+            }
+          </section>
+        </section>
+        <section className="relative h-screen">
+          <Image
+            src="/hero2.png"
+            alt="GardenMan Hero"
+            fill
+            priority
+            className="object-cover"
+          />
+          <article className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] aspect-square rounded-full bg-black z-10 md:w-125"
+          >
+            <img className="w-[70%] mx-auto -mt-5" src="/underlineImg2.png" alt="underline"/>
+            <SplitText
+              text="ABOUT US"
+              tag="h2"
+              className="w-full -mt-16 font-bebas text-3xl text-white md:-mt-16 md:text-6xl"
+              delay={50}
+              duration={1.25}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              rootMargin="-100px"
+              textAlign="center"
+            />
+            <p className="text-sm md:text-xl text-white text-center mt-2">With years of experience in lawn and garden maintenance, we deliver reliable, high-quality landscaping services throughout Greater Vancouver.</p>
+          </article>
         </section>
       </aside>
       <footer>
+        
       </footer>
     </>
   );

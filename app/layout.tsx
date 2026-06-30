@@ -23,7 +23,7 @@ const allura = Allura({
 });
 
 export const metadata = {
-  title: "GardenMan",
+  title: "GARDENMAN",
   description: "Lawn Care & Landscaping",
 };
 

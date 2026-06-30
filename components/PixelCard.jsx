@@ -227,7 +227,14 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
   return (
     <div
       ref={containerRef}
-      className={`h-[400px] w-[300px] relative overflow-hidden grid place-items-center aspect-[4/5] border border-[#27272a] rounded-[25px] isolate transition-colors duration-200 ease-[cubic-bezier(0.5,1,0.89,1)] select-none ${className} shadow-[0_0_20px_rgba(255,255,255,0.25)]`}
+      className={`h-[400px] w-[300px]
+      rounded-[25px]
+      border border-white/40
+      bg-gradient-to-br from-zinc-100 via-slate-100 to-zinc-300
+      shadow-[0_0_25px_rgba(255,255,255,0.45)]
+      relative overflow-hidden
+      flex flex-col items-center justify-center
+      px-6 text-center`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onFocus={finalNoFocus ? undefined : onFocus}
