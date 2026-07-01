@@ -123,7 +123,7 @@ export default function Home() {
         </div>
 
         <div className="border-t border-white/10 py-6 text-center text-sm text-zinc-500">
-          © {new Date().getFullYear()} GardenMan. All rights reserved.
+          © 2026 GARDENMAN. All rights reserved.
         </div>
       </footer>
     </>
