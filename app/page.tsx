@@ -83,8 +83,48 @@ export default function Home() {
           </article>
         </section>
       </aside>
-      <footer>
-        
+      <footer className="border-t border-white/10 bg-zinc-950">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-10 px-6 py-12 md:flex-row">
+          {/* Left */}
+          <article className="flex flex-col items-center md:items-start">
+            <img
+              src="/underlineImg2.png"
+              alt="GardenMan"
+              className="w-48"
+            />
+
+            <p className="max-w-sm text-center text-sm leading-6 text-zinc-400 md:text-left">
+              Professional lawn care and landscaping services across Greater
+              Vancouver. We take pride in keeping your outdoor spaces clean,
+              healthy and beautiful.
+            </p>
+          </article>
+
+          {/* Right */}
+          <article className="flex flex-col items-center md:items-end">
+            <h3 className="font-bebas text-3xl tracking-wider text-white">
+              CONTACT
+            </h3>
+
+            <a
+              href="tel:+16043529950"
+              className="mt-4 text-zinc-300 transition hover:text-green-400"
+            >
+              +1 (604) 352-9950
+            </a>
+
+            <a
+              href="mailto:seovacmarko5@gmail.com"
+              className="mt-2 text-zinc-300 transition hover:text-green-400"
+            >
+              seovacmarko5@gmail.com
+            </a>
+          </article>
+        </div>
+
+        <div className="border-t border-white/10 py-6 text-center text-sm text-zinc-500">
+          © {new Date().getFullYear()} GardenMan. All rights reserved.
+        </div>
       </footer>
     </>
   );
