@@ -76,21 +76,6 @@ class Pixel {
   }
 }
 
-function getEffectiveSpeed(value, reducedMotion) {
-  const min = 0;
-  const max = 100;
-  const throttle = 0.001;
-  const parsed = parseInt(value, 10);
-
-  if (parsed <= min || reducedMotion) {
-    return min;
-  } else if (parsed >= max) {
-    return max * throttle;
-  } else {
-    return parsed * throttle;
-  }
-}
-
 const VARIANTS = {
   default: {
     activeColor: null,
@@ -135,6 +120,21 @@ export default function PixelCard({ variant = 'default', gap, speed, colors, noF
   const finalSpeed = speed ?? variantCfg.speed;
   const finalColors = colors ?? variantCfg.colors;
   const finalNoFocus = noFocus ?? variantCfg.noFocus;
+
+  function getEffectiveSpeed(value, reducedMotion) {
+  const min = 0;
+  const max = 100;
+  const throttle = 0.001;
+  const parsed = parseInt(value, 10);
+
+  if (parsed <= min || reducedMotion) {
+    return min;
+  } else if (parsed >= max) {
+    return max * throttle;
+  } else {
+    return parsed * throttle;
+  }
+}
 
   const initPixels = () => {
     if (!containerRef.current || !canvasRef.current) return;
